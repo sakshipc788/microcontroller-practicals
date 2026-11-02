@@ -1,0 +1,30 @@
+MOV R0, #30H
+MOV R1, #40H
+MOV R2, #05H
+
+AGAIN:
+MOV A, @R0
+MOV @R1, A
+INC R0
+INC R1
+DJNZ R2, AGAIN
+
+END
+
+Internal to internal
+
+
+MOV R0, #40H
+MOV DPTR, #2000H
+MOV R3, #05H
+
+AGAIN:
+MOV A, @R0
+MOVX @DPTR, A
+INC R0
+INC DPTR
+DJNZ R3, AGAIN
+
+END
+
+External to External
